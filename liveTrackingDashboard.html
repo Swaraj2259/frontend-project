@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="BlackBuck - India's Largest Trucking Platform">
+<meta name="keywords" content="trucking, logistics, freight, transportation, BlackBuck">
+<meta name="author" content="BlackBuck">
+<meta name="theme-color" content="#f91c54">
+  <title>Live Tracking Dashboard - BlackBuck</title>
+  <link rel="stylesheet" href="css/liveTrackingDashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Add Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="../svgs/BlackBuck_logo copy.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+<link rel="manifest" href="../manifest.json">
+  </head>
+<body>
+  <nav class="dashboard-navbar">
+    <div class="navbar-left">
+      <div class="navbar-logo" onclick="window.location.href='home1.html'">
+        <img src="../svgs/BlackBuck_logo copy.svg" alt="BlackBuck Logo">
+      </div>
+      <span class="dashboard-title">Live Tracking</span>
+    </div>
+    <div class="navbar-right">
+      <div class="user-profile">
+        <img src="https://media.licdn.com/dms/image/v2/D4E03AQEeMWEVjZZ6mA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729959231033?e=1755129600&v=beta&t=wDAPYzbApCxZcgmLiHfagv5AH97rwIZZF1oR7IJBKYs" alt="User Avatar" class="user-avatar">
+        <span>Swaraj</span>
+      </div>
+      <button class="settings-btn"><i class="fa-solid fa-cog"></i></button>
+      <button class="logout-btn"><i class="fa-solid fa-sign-out-alt"></i> Logout</button>
+    </div>
+  </nav>
+
+  <div class="dashboard-container">
+    <aside class="dashboard-sidebar">
+      <div class="sidebar-header">
+        <h3>My Trucks</h3>
+        <button class="add-truck-btn"><i class="fa-solid fa-plus"></i> Add Truck</button>
+      </div>
+      <ul class="truck-list">
+        <li class="truck-item active">
+          <div class="truck-status online"></div>
+          <div class="truck-details">
+            <span class="truck-name">Truck AB12CD3456</span>
+            <span class="truck-location">Mumbai to Delhi</span>
+          </div>
+          <div class="truck-actions">
+            <i class="fa-solid fa-eye"></i>
+            <i class="fa-solid fa-info-circle"></i>
+          </div>
+        </li>
+        <li class="truck-item">
+          <div class="truck-status idle"></div>
+          <div class="truck-details">
+            <span class="truck-name">Truck EF78GH9012</span>
+            <span class="truck-location">Hyderabad</span>
+          </div>
+          <div class="truck-actions">
+            <i class="fa-solid fa-eye"></i>
+            <i class="fa-solid fa-info-circle"></i>
+          </div>
+        </li>
+        <li class="truck-item">
+          <div class="truck-status offline"></div>
+          <div class="truck-details">
+            <span class="truck-name">Truck IJ34KL5678</span>
+            <span class="truck-location">Pune to Bangalore</span>
+          </div>
+          <div class="truck-actions">
+            <i class="fa-solid fa-eye"></i>
+            <i class="fa-solid fa-info-circle"></i>
+          </div>
+        </li>
+        <li class="truck-item">
+          <div class="truck-status online"></div>
+          <div class="truck-details">
+            <span class="truck-name">Truck MN90OP1234</span>
+            <span class="truck-location">Chennai</span>
+          </div>
+          <div class="truck-actions">
+            <i class="fa-solid fa-eye"></i>
+            <i class="fa-solid fa-info-circle"></i>
+          </div>
+        </li>
+      </ul>
+    </aside>
+    <main class="dashboard-main-content">
+      <div class="map-area">
+        <div id="map"></div>
+        <div class="map-controls">
+          <button id="zoom-in"><i class="fa-solid fa-plus"></i></button>
+          <button id="zoom-out"><i class="fa-solid fa-minus"></i></button>
+          <button id="locate"><i class="fa-solid fa-location-crosshairs"></i></button>
+        </div>
+      </div>
+      <div class="dashboard-widgets">
+        <div class="widget">
+          <h3>Fleet Overview</h3>
+          <p>Total Trucks: <span>4</span></p>
+          <p>Online: <span class="status-online">2</span></p>
+          <p>Idle: <span class="status-idle">1</span></p>
+          <p>Offline: <span class="status-offline">1</span></p>
+        </div>
+        <div class="widget">
+          <h3>Alerts</h3>
+          <ul>
+            <li><i class="fa-solid fa-triangle-exclamation"></i> Truck AB12CD3456: Speeding</li>
+            <li><i class="fa-solid fa-triangle-exclamation"></i> Truck EF78GH9012: Geofence Exit</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Add Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+  <script>
+    // Initialize the map
+    const map = L.map('map').setView([20.5937, 78.9629], 5); // Center on India
+
+    // Add the OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Add truck markers (example coordinates)
+    const trucks = [
+      { id: 'AB12CD3456', lat: 19.0760, lng: 72.8777, status: 'online' }, // Mumbai
+      { id: 'EF78GH9012', lat: 17.3850, lng: 78.4867, status: 'idle' },   // Hyderabad
+      { id: 'IJ34KL5678', lat: 18.5204, lng: 73.8567, status: 'offline' }, // Pune
+      { id: 'MN90OP1234', lat: 13.0827, lng: 80.2707, status: 'online' }  // Chennai
+    ];
+
+    // Create custom truck icons
+    const truckIcons = {
+      online: L.divIcon({
+        className: 'truck-marker online',
+        html: '<i class="fa-solid fa-truck"></i>',
+        iconSize: [30, 30]
+      }),
+      idle: L.divIcon({
+        className: 'truck-marker idle',
+        html: '<i class="fa-solid fa-truck"></i>',
+        iconSize: [30, 30]
+      }),
+      offline: L.divIcon({
+        className: 'truck-marker offline',
+        html: '<i class="fa-solid fa-truck"></i>',
+        iconSize: [30, 30]
+      })
+    };
+
+    // Add markers for each truck
+    trucks.forEach(truck => {
+      L.marker([truck.lat, truck.lng], { icon: truckIcons[truck.status] })
+        .bindPopup(`Truck ${truck.id}<br>Status: ${truck.status}`)
+        .addTo(map);
+    });
+
+    // Map control buttons functionality
+    document.getElementById('zoom-in').addEventListener('click', () => {
+      map.zoomIn();
+    });
+
+    document.getElementById('zoom-out').addEventListener('click', () => {
+      map.zoomOut();
+    });
+
+    document.getElementById('locate').addEventListener('click', () => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+          map.setView([position.coords.latitude, position.coords.longitude], 13);
+        });
+      }
+    });
+  </script>
+</body>
+</html> 

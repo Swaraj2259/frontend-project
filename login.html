@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BlackBuck - Login to your account">
+  <meta name="keywords" content="trucking, logistics, freight, transportation, BlackBuck, login">
+  <meta name="author" content="BlackBuck">
+  <meta name="theme-color" content="#f91c54">
+  <title>BlackBuck - Login</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="svgs/BlackBuck_logo copy.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+  
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="svgs/BlackBuck_logo copy.svg" alt="BlackBuck Logo" />
+      
+    </div>
+    <div class="header-right">
+      <span class="help"><span class="phone-icon">📞</span> Help 08046481828</span>
+      <button class="signup-btn" onclick="window.location.href='../html/signup.html'">Sign Up</button>
+    </div>
+  </header>
+  <div class="background">
+    <div class="overlay"></div>
+    <div class="login-container">
+      <div class="login-box">
+        <div class="login-logo">
+          <img src="svgs/BlackBuck_logo copy.svg" alt="BlackBuck Logo" />
+        
+        </div>
+        <h2>Log in</h2>
+        <form action="speedometer.html" method="get">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="example@gmail.com" required>
+          <label for="password">password</label>
+          <div class="password-wrapper">
+            <input type="password" id="password" placeholder="password" required>
+            <span class="eye-icon">👁️</span>
+          </div>
+          <button type="submit" class="login-btn">Log in</button>
+        </form>
+        <div class="divider">Or Login with</div>
+        <div class="social-login">
+          <button class="social-btn fb">f</button>
+          <button class="social-btn google">G</button>
+          <button class="social-btn apple"></button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-text">
+      Find loads for your truck pan India and connect with 1000+ verified transporters
+    </div>
+  </div>
+<script>
+    document.querySelectorAll('.eye-icon').forEach(eye => {
+  eye.addEventListener('click', function() {
+    const input = this.previousElementSibling;
+
+    if (input.type === 'password') {
+      input.type = 'text';
+     
+      input.style.padding = '10px';
+   
+      this.textContent = '🙈';
+    } else {
+      input.type = 'password';
+      input.style.borderRadius = '6px';
+      input.style.padding = '10px'; 
+          
+      this.textContent = '👁️';
+    }
+  });
+});
+
+</script>
+</body>
+</html>

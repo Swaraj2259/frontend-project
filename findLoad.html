@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="BlackBuck - India's Largest Trucking Platform">
+<meta name="keywords" content="trucking, logistics, freight, transportation, BlackBuck">
+<meta name="author" content="BlackBuck">
+<meta name="theme-color" content="#f91c54">
+  <title>Find Loads - BlackBuck</title>
+
+  <link rel="stylesheet" href="css/findLoad.css">
+  <!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="svgs/BlackBuck_logo copy.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <div class="findloads-container">
+    <header class="findloads-header">
+      <span class="back-arrow" onclick="window.location.href='speedometer.html'">&#8592;</span>
+      <span class="findloads-title" >Find Loads</span>
+    </header>
+    <form class="findloads-form">
+      <div class="findloads-fields">
+        <div class="findloads-field">
+          <span class="loc-dot from"></span>
+          <input type="text" id="fromLocation" placeholder="Enter Loading Point" required>
+        </div>
+        <div class="findloads-field">
+          <span class="loc-dot to"></span>
+          <input type="text" id="toLocation" placeholder="Enter Unloading Point" required>
+        </div>
+      </div>
+      <button type="submit" class="findloads-btn" id="searchLoadsBtn" onclick="window.location.href='findLoad1.html'">
+        <span class="findloads-btn-icon" >&#128269;</span>
+        FIND LOADS
+      </button>
+    </form>
+    <section class="loads-section">
+      <div class="loads-title">Loads for you</div>
+      <div class="loads-cards horizontal-scroll" id="postedLoadsContainer">
+        <!-- Posted loads will be dynamically inserted here -->
+        <div class="load-card">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Bokaro - Jaipur">
+          <div class="load-card-route">Bokaro - Jaipur</div>
+        </div>
+        <div class="load-card">
+          <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b9b?auto=format&fit=crop&w=400&q=80" alt="Ranchi - Jaipur">
+          <div class="load-card-route">Ranchi - Jaipur</div>
+        </div>
+        <div class="load-card">
+          <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80" alt="Ranchi - Bokaro">
+          <div class="load-card-route">Ranchi - Bokaro</div>
+        </div>
+        <div class="load-card">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Jaipur - Bokaro">
+          <div class="load-card-route">Jaipur - Bokaro</div>
+        </div>
+        <span class="arrow-right">&rsaquo;</span>
+      </div>
+      <div class="loads-title">Find Loads From</div>
+      <div class="loads-cards grid">
+        <div class="load-card">
+          <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=400&q=80" alt="J&K">
+          <div class="load-card-route">J&amp;K</div>
+        </div>
+        <div class="load-card">
+          <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Jharkhand">
+          <div class="load-card-route">Jharkhand</div>
+        </div>
+        <div class="load-card">
+          <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=400&q=80" alt="Bihar">
+          <div class="load-card-route">Bihar</div>
+        </div>
+        <div class="load-card">
+          <img src="https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=400&q=80" alt="Orrisa">
+          <div class="load-card-route">Orrisa</div>
+        </div>
+        <div class="load-card">
+          <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Delhi">
+          <div class="load-card-route">Delhi</div>
+        </div>
+        <div class="load-card">
+          <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=400&q=80" alt="Kerala">
+          <div class="load-card-route">Kerala</div>
+        </div>
+        <div class="load-card">
+          <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=400&q=80" alt="Punjab">
+          <div class="load-card-route">Punjab</div>
+        </div>
+        <div class="load-card">
+          <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Maharashtra">
+          <div class="load-card-route">Maharashtra</div>
+        </div>
+        <div class="see-more"><a href="#">See More</a></div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const postedLoadsContainer = document.getElementById('postedLoadsContainer');
+      const fromLocationInput = document.getElementById('fromLocation');
+      const toLocationInput = document.getElementById('toLocation');
+      const searchLoadsBtn = document.getElementById('searchLoadsBtn');
+      
+      const allPostedLoads = JSON.parse(localStorage.getItem('postedLoads')) || [];
+
+      function displayLoads(loadsToDisplay) {
+        postedLoadsContainer.innerHTML = '';
+
+        if (loadsToDisplay.length === 0) {
+          postedLoadsContainer.innerHTML = '<p style="text-align: center; margin-top: 20px;">No matching loads found. Try adjusting your search!</p>';
+          return;
+        }
+
+        loadsToDisplay.forEach(load => {
+          const loadCard = document.createElement('div');
+          loadCard.classList.add('load-card');
+          loadCard.innerHTML = `
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="${load.pickup} - ${load.drop}">
+            <div class="load-card-route">${load.pickup} - ${load.drop}</div>
+            <div class="load-card-details">
+              <p><strong>Date:</strong> ${load.date}</p>
+              <p><strong>Truck Type:</strong> ${load.truck}</p>
+              <p><strong>Details:</strong> ${load.details}</p>
+            </div>
+          `;
+
+          loadCard.addEventListener('click', () => {
+            localStorage.setItem('currentLoadDetails', JSON.stringify(load));
+            window.location.href = 'findLoad2.html';
+          });
+
+          postedLoadsContainer.appendChild(loadCard);
+        });
+      }
+
+      // Initial display
+      displayLoads(allPostedLoads);
+
+      /*
+      searchLoadsBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const fromQuery = fromLocationInput.value.toLowerCase().trim();
+        const toQuery = toLocationInput.value.toLowerCase().trim();
+
+        const filteredLoads = allPostedLoads.filter(load => 
+          load.pickup.toLowerCase().includes(fromQuery) && 
+          load.drop.toLowerCase().includes(toQuery)
+        );
+
+        displayLoads(filteredLoads);
+      });
+      */
+    });
+  </script>
+</body>
+</html>

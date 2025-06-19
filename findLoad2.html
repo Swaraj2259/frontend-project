@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BlackBuck - India's Largest Trucking Platform">
+  <meta name="keywords" content="trucking, logistics, freight, transportation, BlackBuck">
+  <meta name="author" content="BlackBuck">
+  <meta name="theme-color" content="#f91c54">
+  <title>Load Details - BlackBuck</title>
+
+  <link rel="stylesheet" href="css/findload2.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="icon" type="image/svg+xml" href="svgs/BlackBuck_logo copy.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+  <div class="load-details-container">
+    <div class="load-details-header">
+      <span class="back-arrow" onclick="window.location.href='findLoad1.html'"><i class="fa fa-arrow-left"></i></span>
+      <span class="header-title">Load Details</span>
+      <button class="share-btn"><i class="fa fa-share"></i> SHARE LOAD</button>
+      <button class="help-btn">Help</button>
+    </div>
+    <div class="load-details-main">
+      <div class="load-details-card">
+        <div class="location-section">
+          <div class="location-block">
+            <span class="loc-dot from"></span>
+            <div>
+              <div class="loc-label">Loading Point</div>
+              <div class="loc-main">Medchal, Secunderabad, Telengana</div>
+              <div class="loc-sub">Address will be shared on call</div>
+            </div>
+          </div>
+          <div class="location-block">
+            <span class="loc-dot to"></span>
+            <div>
+              <div class="loc-label">Unloading Point</div>
+              <div class="loc-main">Wadala, Mumbai, Maharashtra</div>
+              <div class="loc-sub">Address will be shared on call</div>
+            </div>
+          </div>
+        </div>
+        <div class="details-table">
+          <div class="details-row">
+            <div>Distance</div>
+            <div class="details-value">689 km</div>
+          </div>
+          <div class="details-row">
+            <div>Product</div>
+            <div class="details-value highlight">Car</div>
+          </div>
+          <div class="details-row">
+            <div>Truck Type</div>
+            <div class="details-value highlight">Standard Container</div>
+          </div>
+          <div class="details-row sub-row">
+            <div></div>
+            <div class="details-value sub">6 TON | 20-24 Feet</div>
+          </div>
+          <div class="details-row">
+            <div>Total Load</div>
+            <div class="details-value highlight">6 ton</div>
+          </div>
+        </div>
+        <div class="section-title">Pricing and Payment Details <span class="negotiable">(Negotiable)</span></div>
+        <div class="details-table">
+          <div class="details-row">
+            <div>Payment Terms</div>
+            <div class="details-value highlight">Advance</div>
+          </div>
+          <div class="details-row">
+            <div>Total Earnings</div>
+            <div class="details-value">Will be shared on call</div>
+          </div>
+        </div>
+        <div class="info-box">
+          <ul>
+            <li>Advance percentage will be shared on call.</li>
+            <li>Advance payment paid at loading point.</li>
+            <li>Balance payment paid after unloading documents are verified.</li>
+          </ul>
+        </div>
+        <div class="superloads-card">
+          <div class="profile-header-row">
+            <div class="profile-info-display">
+              <img
+                src="https://media.licdn.com/dms/image/v2/D4E03AQEeMWEVjZZ6mA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729959231033?e=1755129600&v=beta&t=wDAPYzbApCxZcgmLiHfagv5AH97rwIZZF1oR7IJBKYs"
+                alt="User Avatar" class="profile-display-avatar" />
+              <div>
+                <div class="profile-display-name">Manthan Bhosale</div>
+                <div class="profile-display-loads">179 loads posted</div>
+              </div>
+            </div>
+            <button class="profile-dropdown-btn" id="profileDropdownBtn">
+              <i class="fa fa-chevron-down"></i>
+            </button>
+          </div>
+
+          <!-- The dropdown content (profile-big-dropdown) will be here, hidden by default -->
+          <div class="profile-big-dropdown" id="profileDropdown">
+            <div class="profile-card-rating">
+              <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              <span class="rating-value">4.8</span>
+              <span class="rating-count">(52 ratings)</span>
+            </div>
+            <div class="profile-card-actions">
+              <button class="share-profile-btn"><i class="fa fa-share"></i> Share Profile</button>
+              <button class="rate-shipper-btn" id="rateShipperBtn"><i class="fa fa-star"></i> Rate Shipper</button>
+            </div>
+            <form class="rate-form" id="rateForm" style="display:none;">
+              <label>Rate this Shipper:</label>
+              <span class="star-input">
+                <input type="radio" name="star" value="5" id="star5"><label for="star5">&#9733;</label>
+                <input type="radio" name="star" value="4" id="star4"><label for="star4">&#9733;</label>
+                <input type="radio" name="star" value="3" id="star3"><label for="star3">&#9733;</label>
+                <input type="radio" name="star" value="2" id="star2"><label for="star2">&#9733;</label>
+                <input type="radio" name="star" value="1" id="star1"><label for="star1">&#9733;</label>
+              </span>
+              <label for="reviewText">Your Review (optional):</label>
+              <textarea id="reviewText" placeholder="Type your review here..."></textarea>
+              <button type="submit" class="submit-rating-btn">Submit</button>
+            </form>
+            <div class="rate-success" id="rateSuccess" style="display:none;">
+              <i class="fa fa-check-circle"></i> Thank you for rating!
+            </div>
+            <div class="profile-card-reviews">
+              <div class="review-title">Recent Reviews</div>
+              <div class="review">
+                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="review-text">Very professional and prompt payment!</div>
+                <div class="review-user">- Ajay Singh</div>
+              </div>
+              <div class="review">
+                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                <div class="review-text">Good experience, would work again.</div>
+                <div class="review-user">- S. Kumar</div>
+              </div>
+              <div class="review">
+                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="review-text">Smooth transaction and clear communication.</div>
+                <div class="review-user">- Ramesh P.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="action-row">
+          <button class="bid-btn" id="bidBtn">BID</button>
+          <form id="bidForm" class="bid-form" style="display:none;">
+            <input type="number" min="1" placeholder="Enter your bid (₹)" required>
+            <button type="submit" class="submit-bid-btn">Submit Bid</button>
+          </form>
+          <button class="call-btn"><i class="fa fa-phone"></i> CALL NOW</button>
+          <div id="bidSuccess" class="bid-success" style="display:none;">
+            <i class="fa fa-check-circle"></i> Bid has been sent successfully!
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const bidBtn = document.getElementById('bidBtn');
+    const bidForm = document.getElementById('bidForm');
+    const bidSuccess = document.getElementById('bidSuccess');
+    const profileDropdownBtn = document.getElementById('profileDropdownBtn');
+    const profileDropdown = document.getElementById('profileDropdown');
+    const rateShipperBtn = document.getElementById('rateShipperBtn');
+    const rateForm = document.getElementById('rateForm');
+    const rateSuccess = document.getElementById('rateSuccess');
+    const reviewText = document.getElementById('reviewText');
+    const currentRatingValue = document.querySelector('.profile-card-rating .rating-value');
+    const currentRatingCount = document.querySelector('.profile-card-rating .rating-count');
+    const reviewsContainer = document.querySelector('.profile-card-reviews');
+
+    let initialAvgRating = parseFloat(currentRatingValue.textContent);
+    let initialNumRatings = parseInt(currentRatingCount.textContent.replace(/[^\d]/g, ''));
+    let totalRatingSum = initialAvgRating * initialNumRatings;
+    let numberOfRatings = initialNumRatings;
+
+    function updateDisplayedRating() {
+      if (numberOfRatings > 0) {
+        const newAverage = (totalRatingSum / numberOfRatings).toFixed(1);
+        currentRatingValue.textContent = newAverage;
+        currentRatingCount.textContent = `(${numberOfRatings} ratings)`;
+      } else {
+        currentRatingValue.textContent = '0.0';
+        currentRatingCount.textContent = '(0 ratings)';
+      }
+    }
+
+    bidBtn.addEventListener('click', () => {
+      bidBtn.style.display = 'none';
+      bidForm.style.display = 'flex';
+      bidSuccess.style.display = 'none';
+      bidForm.querySelector('input').focus();
+    });
+
+    bidForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      bidForm.style.display = 'none';
+      bidSuccess.style.display = 'flex';
+      setTimeout(() => {
+        bidSuccess.style.display = 'none';
+        bidBtn.style.display = 'inline-block';
+        bidForm.reset();
+      }, 2000);
+    });
+
+    profileDropdownBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      profileDropdown.style.display = profileDropdown.style.display === 'block' ? 'none' : 'block';
+      rateForm.style.display = 'none';
+      rateSuccess.style.display = 'none';
+      reviewText.value = '';
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!profileDropdown.contains(e.target) && e.target !== profileDropdownBtn) {
+        profileDropdown.style.display = 'none';
+        rateForm.style.display = 'none';
+        rateSuccess.style.display = 'none';
+        reviewText.value = '';
+      }
+    });
+
+    rateShipperBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      rateForm.style.display = 'flex';
+      rateSuccess.style.display = 'none';
+    });
+
+    rateForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const selectedRating = document.querySelector('input[name="star"]:checked');
+      const reviewContent = reviewText.value.trim();
+      const reviewerName = "You";
+
+      if (selectedRating) {
+        const ratingValue = parseInt(selectedRating.value);
+        totalRatingSum += ratingValue;
+        numberOfRatings++;
+        updateDisplayedRating();
+
+        const newReviewDiv = document.createElement('div');
+        newReviewDiv.classList.add('review');
+        newReviewDiv.setAttribute('data-rating', ratingValue);
+        newReviewDiv.innerHTML = `
+          <div class="review-stars">${'&#9733;'.repeat(ratingValue)}${'&#9734;'.repeat(5 - ratingValue)}</div>
+          <div class="review-text">${reviewContent || 'No review provided.'}</div>
+          <div class="review-user">- ${reviewerName}</div>
+        `;
+        reviewsContainer.prepend(newReviewDiv);
+
+        rateForm.style.display = 'none';
+        rateSuccess.style.display = 'flex';
+        rateForm.reset();
+        
+        setTimeout(() => {
+          rateSuccess.style.display = 'none';
+        }, 2000);
+      }
+    });
+  </script>
+</body>
+
+</html>

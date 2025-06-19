@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="BlackBuck - India's Largest Trucking Platform">
+<meta name="keywords" content="trucking, logistics, freight, transportation, BlackBuck">
+<meta name="author" content="BlackBuck">
+<meta name="theme-color" content="#f91c54">
+    <title>Speedometer Animation</title>
+    <!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="../svgs/BlackBuck_logo copy.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+<link rel="manifest" href="../manifest.json">
+    <style>
+        body {
+            margin: 0;
+            background: #000;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+        }
+
+        .ticks {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .tick {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform: rotate(calc(var(--i) * 180deg / var(--total) - 90deg));
+        }
+
+        .tick::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 10px;
+            background: #666;
+            transform: translateX(-50%);
+            box-shadow: 0 0 3px #fff3;
+        }
+
+        .tick.major::before {
+            height: 20px;
+            width: 3px;
+            background: #fff;
+            box-shadow: 0 0 6px #fff;
+        }
+
+        .needle {
+            position: absolute;
+            width: 4px;
+            height: 180px;
+            background: linear-gradient(to top, #ff5f6d, #ffc371);
+            top: 20px;
+            left: 50%;
+            transform-origin: bottom center;
+            transform: rotate(-90deg);
+            z-index: 10;
+            border-radius: 2px;
+            box-shadow: 0 0 12px #ff5f6d;
+        }
+
+        .center {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            text-align: center;
+        }
+
+        .center #value {
+            font-size: 42px;
+            font-weight: bold;
+            text-shadow: 0 0 8px white;
+        }
+
+        .center .label {
+            font-size: 18px;
+            color: #aaa;
+            text-shadow: 0 0 5px #aaa;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="ticks" id="ticks"></div>
+        <div class="needle" id="needle"></div>
+        <div class="center">
+            <div id="value">0</div>
+            <div class="label" id="label">LOADING</div>
+        </div>
+    </div>
+
+    <script>
+        const ticksContainer = document.getElementById("ticks");
+        const totalTicks = 61;
+
+        for (let i = 0; i < totalTicks; i++) {
+            const tick = document.createElement("div");
+            tick.className = "tick";
+            tick.style.setProperty("--i", i);
+            tick.style.setProperty("--total", totalTicks - 1);
+            if (i % 5 === 0) tick.classList.add("major");
+            ticksContainer.appendChild(tick);
+        }
+
+        const needle = document.getElementById("needle");
+        const valueDisplay = document.getElementById("value");
+        const labelDisplay = document.getElementById("label");
+
+        const duration = 1000; 
+        const startTime = performance.now();
+
+        function animate(time) {
+            const elapsed = time - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const value = Math.floor(progress * 100);
+            const angle = -90 + 180 * progress;
+
+            needle.style.transform = `rotate(${angle}deg)`;
+            valueDisplay.textContent = value;
+
+            if (progress < 1) {
+                requestAnimationFrame(animate);
+            } else {
+                labelDisplay.textContent = "READY";
+                setTimeout(() => {
+                    window.location.href = "home1.html";
+                }, 50);
+            }
+        }
+        requestAnimationFrame(animate);
+    </script>
+
+</body>
+
+</html>

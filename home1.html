@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BlackBuck - India's Largest Trucking Platform">
+  <meta name="keywords" content="trucking, logistics, freight, transportation, BlackBuck">
+  <meta name="author" content="BlackBuck">
+  <meta name="theme-color" content="#f91c54">
+  <title>BlackBuck - Home</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../svgs/BlackBuck_logo copy.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+  <link rel="manifest" href="../manifest.json">
+  
+  <link rel="stylesheet" href="css/home1.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="sidebar-container">
+    <nav class="navbar">
+      <div class="profile-icon" id="navbar-profile-icon" tabindex="0"> 
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="8" r="4" stroke="#fff" stroke-width="2" fill="none" />
+          <path d="M4 20c0-4 4-6 8-6s8 2 8 6" stroke="#fff" stroke-width="2" fill="none" />
+        </svg>
+        <span class="notification-badge">3</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="speedometer.html" class="active">Home</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="#">Company</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Blogs & News</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <div class="logo">
+        <img src="../svgs/BlackBuck_logo copy.svg" alt="BlackBuck Logo">
+      </div>
+    </nav>
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-profile">
+        <div class="sidebar-profile-icon icon-hover">
+          <!-- User/Profile SVG Icon -->
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="8" r="4" stroke="#222" stroke-width="2" fill="none" />
+            <path d="M4 20c0-4 4-6 8-6s8 2 8 6" stroke="#222" stroke-width="2" fill="none" />
+          </svg>
+        </div>
+        <span class="sidebar-profile-name" id="user-name">Loading...</span>
+      </div>
+
+      <div class="sidebar-notifications">
+        <div class="notifications-header">
+          <h3>Notifications</h3>
+          <button class="mark-all-read">
+            <i class="fas fa-check-double"></i>
+            Mark all as read
+          </button>
+        </div>
+        <div class="notifications-list">
+          <div class="notification-item unread">
+            <div class="notification-icon">
+              <i class="fas fa-truck"></i>
+            </div>
+            <div class="notification-content">
+              <p>New load available in your area</p>
+              <span class="notification-time">2 minutes ago</span>
+            </div>
+            <div class="notification-status"></div>
+          </div>
+          <div class="notification-item unread">
+            <div class="notification-icon">
+              <i class="fas fa-file-alt"></i>
+            </div>
+            <div class="notification-content">
+              <p>Your KYC documents are verified</p>
+              <span class="notification-time">1 hour ago</span>
+            </div>
+            <div class="notification-status"></div>
+          </div>
+          <div class="notification-item">
+            <div class="notification-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="notification-content">
+              <p>You received a 5-star rating</p>
+              <span class="notification-time">2 hours ago</span>
+            </div>
+            <div class="notification-status"></div>
+          </div>
+          <div class="notification-item">
+            <div class="notification-icon">
+              <i class="fas fa-wallet"></i>
+            </div>
+            <div class="notification-content">
+              <p>Payment received for trip #1234</p>
+              <span class="notification-time">Yesterday</span>
+            </div>
+            <div class="notification-status"></div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="sidebar-menu">
+        <a href="blackBuckAccount.html" class="sidebar-item">
+          <span class="icon-hover">
+            <!-- Account SVG Icon -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+              <rect x="3" y="7" width="18" height="10" rx="2" stroke="#f91c54" stroke-width="2" />
+              <rect x="7" y="11" width="4" height="2" fill="#f91c54" />
+            </svg>
+          </span>
+          <span>BlackBuck Account</span>
+        </a>
+        <a href="postLoad.html" class="sidebar-item">
+          <span class="icon-hover">
+            <!-- Truck/Post Loads SVG Icon -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+              <rect x="2" y="7" width="15" height="10" rx="2" stroke="#f91c54" stroke-width="2" />
+              <rect x="17" y="11" width="5" height="4" rx="1" stroke="#f91c54" stroke-width="2" />
+              <circle cx="6" cy="19" r="2" fill="#f91c54" />
+              <circle cx="19" cy="19" r="2" fill="#f91c54" />
+            </svg>
+          </span>
+          <span>Post Loads</span>
+        </a>
+        <a href="#" class="sidebar-item" id="gps-sidebar-item">
+          <span class="icon-hover">
+            <!-- GPS SVG Icon -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="8" stroke="#f91c54" stroke-width="2" />
+              <circle cx="12" cy="12" r="2" fill="#f91c54" />
+              <path d="M12 2v2M12 20v2M2 12h2M20 12h2" stroke="#f91c54" stroke-width="2" />
+            </svg>
+          </span>
+          <span>GPS</span>
+        </a>
+        <div class="gps-dropdown" id="gps-dropdown-menu">
+          <a href="getGps.html" class="gps-dropdown-item">Get a GPS for your car/truck</a>
+          <a href="trackTruck.html" class="gps-dropdown-item">Track your truck</a>
+        </div>
+        <a href="#" class="sidebar-item">
+          <span class="icon-hover">
+            <!-- Find Loads SVG Icon -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+              <rect x="3" y="7" width="18" height="10" rx="2" stroke="#f91c54" stroke-width="2" />
+              <circle cx="8" cy="17" r="2" fill="#f91c54" />
+              <circle cx="16" cy="17" r="2" fill="#f91c54" />
+            </svg>
+          </span>
+          <span onclick="window.location.href='findLoad.html'">Find Loads</span>
+        </a>
+        <a href="kycDocuments.html" class="sidebar-item">
+          <span class="icon-hover">
+            <!-- KYC SVG Icon -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+              <rect x="4" y="4" width="16" height="20" rx="2" stroke="#f91c54" stroke-width="2" />
+              <path d="M8 10h8M8 14h5" stroke="#f91c54" stroke-width="2" />
+            </svg>
+          </span>
+          <span>KYC & Documents</span>
+        </a>
+        <a href="shipmentTracking.html" class="sidebar-item">
+          <span class="icon-hover">
+            <!-- Shipment Tracking SVG Icon (New) -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#f91c54" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 12h-6l-2 3H8l-2-3H2"></path>
+              <path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path>
+            </svg>
+          </span>
+          <span>Shipment Tracking</span>
+        </a>
+      </nav>
+    </aside>
+  </div>
+  <div class="hero">
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="../videos/Home+Video+Short.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1><span class="highlight">INDIA'S LARGEST</span></h1>
+      <h2>DIGITAL TRUCKING PLATFORM</h2>
+      <a href="product.html" class="explore-btn">Explore <span>&rarr;</span></a>
+    </div>
+  </div>
+  <footer onclick="window.location.href='product.html'">
+    &copy;2024 BLACKBUCK
+  </footer>
+
+  <script>
+    // Get user name from localStorage
+    const userName = localStorage.getItem('userName') || 'Guest';
+    document.getElementById('user-name').textContent = userName;
+
+    const profileIcon = document.getElementById('navbar-profile-icon');
+    const sidebar = document.getElementById('sidebar');
+
+    const gpsSidebarItem = document.getElementById('gps-sidebar-item');
+    const gpsDropdownMenu = document.getElementById('gps-dropdown-menu');
+
+   
+    function getTimeAgo(dateString) {
+      const date = new Date(dateString);
+      const now = new Date();
+      const seconds = Math.floor((now - date) / 1000);
+      
+      if (seconds < 60) return 'just now';
+      if (seconds < 3600) return `${Math.floor(seconds / 60)} minutes ago`;
+      if (seconds < 86400) return `${Math.floor(seconds / 3600)} hours ago`;
+      return `${Math.floor(seconds / 86400)} days ago`;
+    }
+
+
+    function addDefaultNotifications() {
+      const notifications = JSON.parse(localStorage.getItem('notifications')) || [];
+      
+      if (notifications.length === 0) {
+        const defaultNotifications = [
+          {
+            id: Date.now(),
+            type: 'welcome',
+            message: `Welcome ${userName}! Get started by posting your first load.`,
+            time: new Date().toISOString(),
+            read: false
+          },
+          {
+            id: Date.now() + 1,
+            type: 'feature',
+            message: 'Track your shipments in real-time with our GPS tracking feature.',
+            time: new Date().toISOString(),
+            read: false
+          },
+          {
+            id: Date.now() + 2,
+            type: 'tip',
+            message: 'Use the notification panel to stay updated with your loads.',
+            time: new Date().toISOString(),
+            read: false
+          }
+        ];
+        
+        localStorage.setItem('notifications', JSON.stringify(defaultNotifications));
+      }
+    }
+
+    // Function to update notifications list
+    function updateNotificationsList() {
+      const notificationsList = document.querySelector('.notifications-list');
+      const notifications = JSON.parse(localStorage.getItem('notifications')) || [];
+      
+      notificationsList.innerHTML = notifications.map(notification => `
+        <div class="notification-item ${notification.read ? '' : 'unread'}" data-id="${notification.id}">
+          <div class="notification-icon">
+            <i class="fas ${notification.type === 'welcome' ? 'fa-user' : 
+                           notification.type === 'feature' ? 'fa-star' : 
+                           notification.type === 'tip' ? 'fa-lightbulb' : 
+                           'fa-truck'}"></i>
+          </div>
+          <div class="notification-content">
+            <p>${notification.message}</p>
+            <span class="notification-time">${getTimeAgo(notification.time)}</span>
+          </div>
+          <div class="notifi2cation-status"></div>
+        </div>
+      `).join('');
+
+      // Update notification badge
+      updateNotificationBadge();
+    }
+
+    // Add default notifications and initialize
+    addDefaultNotifications();
+    updateNotificationsList();
+
+    document.addEventListener('click', function(e) {
+      // Toggle main sidebar
+      if (profileIcon.contains(e.target)) {
+        sidebar.classList.toggle('open');
+      } else if (!sidebar.contains(e.target)) {
+        sidebar.classList.remove('open');
+      }
+
+      // Toggle GPS dropdown
+      if (gpsSidebarItem.contains(e.target)) {
+        gpsDropdownMenu.style.display = gpsDropdownMenu.style.display === 'flex' ? 'none' : 'flex';
+        e.stopPropagation();
+      } else if (!gpsDropdownMenu.contains(e.target) && !gpsSidebarItem.contains(e.target)) {
+        gpsDropdownMenu.style.display = 'none';
+      }
+    });
+
+    // Mark all notifications as read
+    document.querySelector('.mark-all-read').addEventListener('click', function() {
+      const notifications = JSON.parse(localStorage.getItem('notifications')) || [];
+      notifications.forEach(notification => notification.read = true);
+      localStorage.setItem('notifications', JSON.stringify(notifications));
+      updateNotificationsList();
+    });
+
+    // Update notification badge
+    function updateNotificationBadge() {
+      const notifications = JSON.parse(localStorage.getItem('notifications')) || [];
+      const unreadCount = notifications.filter(n => !n.read).length;
+      const badge = document.querySelector('.notification-badge');
+      badge.textContent = unreadCount;
+      badge.style.display = unreadCount > 0 ? 'flex' : 'none';
+    }
+
+    // Initialize notification badge
+    updateNotificationBadge();
+  </script>
+
+</body>
+
+</html> 
