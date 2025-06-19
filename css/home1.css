@@ -1,0 +1,710 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat', Arial, sans-serif;
+  color: #fff;
+  background: #000;
+  overflow-x: hidden;
+}
+
+.navbar {
+background: linear-gradient(to bottom, rgba(0,0,0,0.7)60%, rgba(0,0,0,0)100%);
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 60px 0 60px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 36px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.0rem;
+  font-weight: 500;
+  opacity: 0.85;
+  transition: opacity 0.2s, font-weight 0.2s;
+}
+
+.nav-links li a.active,
+.nav-links li a:hover {
+  font-weight: 700;
+  opacity: 1;
+  border-bottom: 2px solid #ff3366;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 33px;
+}
+
+
+.hero {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-video {
+  position: absolute;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.45);
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  padding-top: 400px;
+  z-index: 3;
+  text-align: center;
+  width: 100%;
+}
+
+.hero-content h1 {
+  font-size: 4vw;
+  font-weight: 900;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.hero-content .highlight {
+  color: #f91c54;
+  font-size: 5vw;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.hero-content h2 {
+  font-size: 2vw;
+  font-weight: 400;
+  margin: 18px 0 40px 0;
+  letter-spacing: 4px;
+}
+
+.explore-btn {
+  display: inline-block;
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  margin-top: 18px;
+  backdrop-filter: blur(2px);
+}
+
+.explore-btn:hover {
+  background: #ff3366;
+  color: #fff;
+  border-color: #ff3366;
+}
+
+footer {
+  position: absolute;
+  bottom: 0.1px;
+  width: 100vw;
+  text-align: bottom;
+  text-align: center;
+  
+  color: #fff;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  z-index: 10;
+  opacity: 0.8;
+  padding-bottom: 100px;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 30%, rgba(0,0,0,0) 100%);}
+
+.profile-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin-right: 28px;
+  margin-left: 0;
+  position: relative;
+}
+
+.profile-icon svg {
+  display: block;
+  width: 32px;
+  height: 32px;
+  stroke: #fff;
+  background: rgba(0,0,0,0.2);
+  border-radius: 50%;
+  padding: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Updated Notification Badge within Profile Icon */
+.notification-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #f91c54;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+  box-shadow: 0 2px 5px rgba(249, 28, 84, 0.3);
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  .hero-content h1, .hero-content .highlight { font-size: 7vw; }
+  .hero-content h2 { font-size: 3vw; }
+  .navbar { padding: 18px 10px 0 10px; }
+  .profile-icon {
+    margin-right: 12px;
+  }
+  .profile-icon svg {
+    width: 28px;
+    height: 28px;
+    padding: 2px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-content h1, .hero-content .highlight { font-size: 9vw; }
+  .hero-content h2 { font-size: 4vw; }
+  .navbar { flex-direction: column; gap: 10px; }
+}
+
+/* Custom cursor: Place your trucking-related PNG or .cur in the same directory and update the URL below */
+:root {
+  --sidebar-bg: #fff;
+  --sidebar-radius: 18px;
+  --sidebar-shadow: 0 4px 32px rgba(0,0,0,0.10);
+  --sidebar-width: 340px;
+  --sidebar-gap: 18px;
+  --sidebar-item-radius: 12px;
+  --sidebar-item-hover: #f7f7f7;
+ 
+}
+
+.sidebar {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 350px;
+  z-index: 100;
+  box-shadow: 2px 0 24px rgba(0,0,0,0.10);
+  background: var(--sidebar-bg, #fff);
+  transition: opacity 0.25s cubic-bezier(.4,2,.6,1);
+  opacity: 0;
+  pointer-events: none;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 20px 0px 200px 20px;
+}
+
+.sidebar.open {
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Remove hover/focus logic for sidebar visibility */
+.profile-icon:hover + .sidebar,
+.profile-icon:focus-within + .sidebar {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.sidebar-profile {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.sidebar-profile-icon {
+  width: 44px;
+  height: 44px;
+  background: #f7f7f7;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-profile-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #222;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+
+.sidebar-profile-name:hover {
+  color: #f91c54;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sidebar-gap);
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: var(--sidebar-item-hover);
+  border-radius: var(--sidebar-item-radius);
+  padding: 16px 18px;
+  text-decoration: none;
+  color: #222;
+  font-size: 1.08rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: background 0.2s;
+}
+
+.sidebar-item:hover {
+  background: #f0e9f9;
+}
+
+.icon-hover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s cubic-bezier(.4,2,.6,1), filter 0.25s cubic-bezier(.4,2,.6,1);
+
+}
+
+.icon-hover:hover {
+  transform: scale(1.18);
+  filter: brightness(1.3) drop-shadow(0 2px 8px #f91c54aa);
+}
+
+.sidebar-item span:last-child {
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .sidebar {
+    width: 98vw;
+    min-width: 0;
+    padding: 12px 4px;
+    margin: 8px;
+  }
+  .sidebar-profile-name {
+    font-size: 1rem;
+  }
+  .sidebar-item {
+    font-size: 0.98rem;
+    padding: 12px 8px;
+    gap: 10px;
+  }
+  .sidebar-profile-icon {
+    width: 36px;
+    height: 36px;
+  }
+  .icon-hover svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+.gps-dropdown {
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 30px; /* Indent slightly to show it's a sub-menu */
+  margin-top: -10px; /* Pull it up closer to the main GPS item */
+  margin-bottom: 10px;
+}
+
+.gps-dropdown-item {
+  color: #555; /* A darker color for submenu items */
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+  display: block; /* Ensure it takes full width for click area */
+}
+
+.gps-dropdown-item:hover {
+  background: #f0e9f9;
+  color: #222;
+}
+
+/* Ensure the parent sidebar item is still styled correctly */
+.sidebar-item#gps-sidebar-item {
+  margin-bottom: 0; /* Remove default bottom margin if any */
+}
+
+/* Notification Icon */
+.notification-icon {
+  position: relative;
+  cursor: pointer;
+  padding: 8px;
+  margin-right: 20px;
+  color: #fff;
+  transition: transform 0.3s;
+}
+
+.notification-icon:hover {
+  transform: scale(1.1);
+}
+
+.notification-icon i {
+  font-size: 1.2rem;
+}
+
+.notification-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #f91c54;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+  box-shadow: 0 2px 5px rgba(249, 28, 84, 0.3);
+}
+
+/* Notification Panel */
+.notification-panel {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  width: 350px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  z-index: 1000;
+  display: none;
+  overflow: hidden;
+}
+
+.notification-panel.show {
+  display: block;
+  animation: slideIn 0.3s ease-out;
+}
+
+.notification-header {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notification-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.mark-all-read {
+  background: none;
+  border: none;
+  color: #f91c54;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: color 0.3s;
+}
+
+.mark-all-read:hover {
+  color: #e01a4b;
+}
+
+.notification-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.notification-item {
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  border-bottom: 1px solid #eee;
+  transition: background 0.3s;
+}
+
+.notification-item:hover {
+  background: #f8f9fa;
+}
+
+.notification-item.unread {
+  background: #f8f9fa;
+}
+
+.notification-item.unread::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #f91c54;
+}
+
+.notification-item i {
+  font-size: 1.2rem;
+  color: #f91c54;
+  margin-top: 0.2rem;
+}
+
+.notification-content {
+  flex: 1;
+}
+
+.notification-content p {
+  margin: 0;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.notification-time {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 0.3rem;
+  display: block;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .notification-panel {
+    width: 100%;
+    top: 60px;
+    right: 0;
+    border-radius: 0;
+  }
+
+  .notification-icon {
+    margin-right: 10px;
+  }
+}
+
+/* Sidebar Notifications */
+.sidebar-notifications {
+  margin: 1.5rem 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 1rem 0;
+}
+
+.notifications-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+}
+
+.notifications-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #666;
+  font-weight: 600;
+}
+
+.mark-all-read {
+  background: none;
+  border: none;
+  color: #f91c54;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s;
+}
+
+.mark-all-read:hover {
+  color: #e01a4b;
+}
+
+.mark-all-read i {
+  font-size: 0.9rem;
+}
+
+.notifications-list {
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 0 0.5rem;
+}
+
+.notification-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 0.8rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  position: relative;
+  transition: background 0.3s;
+}
+
+.notification-item:hover {
+  background: #f8f9fa;
+}
+
+.notification-item.unread {
+  background: rgba(249, 28, 84, 0.05);
+}
+
+.notification-item.unread .notification-status {
+  width: 8px;
+  height: 8px;
+  background: #f91c54;
+  border-radius: 50%;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.notification-icon {
+  width: 32px;
+  height: 32px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.notification-icon i {
+  font-size: 1rem;
+  color: #f91c54;
+}
+
+.notification-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.notification-content p {
+  margin: 0;
+  color: #333;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.notification-time {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 0.3rem;
+  display: block;
+}
+
+/* Scrollbar styling for notifications list */
+.notifications-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.notifications-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.notifications-list::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 3px;
+}
+
+.notifications-list::-webkit-scrollbar-thumb:hover {
+  background: #ccc;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sidebar-notifications {
+    margin: 1rem 0;
+  }
+
+  .notifications-list {
+    max-height: 250px;
+  }
+
+  .notification-item {
+    padding: 0.7rem;
+  }
+
+  /* Adjust profile icon and badge for small screens */
+  .profile-icon {
+    margin-right: 12px;
+  }
+
+  .profile-icon svg {
+    width: 28px;
+    height: 28px;
+    padding: 2px;
+  }
+
+  .notification-badge {
+    top: -2px;
+    right: -2px;
+    min-width: 16px;
+    height: 16px;
+    font-size: 0.6rem;
+  }
+}
+

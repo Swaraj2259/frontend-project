@@ -1,0 +1,235 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: #fff;
+  color: #222;
+}
+
+.findloads-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px 32px 24px;
+}
+
+.findloads-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 32px 0 16px 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.back-arrow {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #222;
+}
+
+.findloads-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.findloads-form {
+  margin-bottom: 24px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px 0 16px 0;
+  box-shadow: 0 2px 12px #0001;
+}
+
+.findloads-fields {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 18px;
+}
+
+.findloads-field {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.loc-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.loc-dot.from {
+  background: #00c3ff;
+}
+
+.loc-dot.to {
+  background: #ff3366;
+}
+
+.findloads-field input[type='text'] {
+  flex: 1;
+  padding: 14px 16px;
+  border: none;
+  border-bottom: 2px solid #eee;
+  font-size: 1.1rem;
+  background: #fafafa;
+  color: #222;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.findloads-field input[type='text']:focus {
+  border-bottom: 2px solid #ff3366;
+}
+
+.findloads-btn {
+  width: 100%;
+  background: #aaa;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 18px 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
+  transition: background 0.2s;
+}
+
+.findloads-btn:hover {
+  background: #ff3366;
+}
+
+.findloads-btn-icon {
+  font-size: 1.2em;
+}
+
+.loads-section {
+  margin-top: 32px;
+}
+
+.loads-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 24px 0 12px 0;
+}
+
+.loads-cards.horizontal-scroll {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  align-items: flex-start;
+  position: relative;
+}
+
+.arrow-right {
+  color: #ff3366;
+  font-size: 2.2em;
+  align-self: center;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.loads-cards.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 18px;
+  margin-top: 12px;
+}
+
+.load-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px #0001;
+  min-width: 120px;
+  max-width: 160px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+  transition: box-shadow 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+
+.load-card:hover {
+  box-shadow: 0 4px 24px #ff336633;
+  transform: translateY(-4px) scale(1.03);
+}
+
+.load-card img {
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+
+.load-card-route {
+  padding: 10px 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222;
+  background: #f5f5f5;
+  border-radius: 0 0 12px 12px;
+  text-align: center;
+}
+
+.see-more {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  grid-column: span 2;
+  font-size: 1rem;
+  color: #ff3366;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+.see-more a {
+  color: #ff3366;
+  text-decoration: none;
+}
+
+@media (max-width: 700px) {
+  .findloads-container {
+    padding: 0 4px 24px 4px;
+  }
+  .findloads-header {
+    font-size: 1.2rem;
+    padding: 18px 0 8px 0;
+  }
+  .findloads-form {
+    padding: 12px 0 8px 0;
+  }
+  .findloads-fields {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .loads-cards.grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.profile-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin-right: 28px;
+    margin-left: 0;
+  }
+  
+  .profile-icon svg {
+    display: block;
+    width: 32px;
+    height: 32px;
+    stroke: #fff;
+    background: rgba(0,0,0,0.2);
+    border-radius: 50%;
+    padding: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }

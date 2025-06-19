@@ -1,0 +1,464 @@
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  margin: 0;
+  background: #f0f2f5;
+  color: #222;
+  overflow: hidden; /* Prevent body scroll, content handled by flex */
+  height: 100vh; /* Ensure body takes full viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar styles (reused from main-navbar) */
+.main-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: relative;
+  z-index: 100;
+  flex-shrink: 0; /* Prevent navbar from shrinking */
+}
+
+.navbar-logo {
+  cursor: pointer;
+}
+
+.navbar-logo img {
+  height: 32px;
+}
+
+.navbar-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 25px;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  font-size: 1.05rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-links li a:hover,
+.navbar-links li a.active {
+  color: #0070f3; /* Accent color */
+}
+
+/* Main Tracking Dashboard Container */
+.tracking-dashboard-container {
+  display: flex;
+  flex-grow: 1; /* Allow container to take up remaining height */
+  background: #f0f2f5;
+  gap: 20px;
+  padding: 20px;
+  overflow: hidden; /* Hide scrollbars, as children handle scrolling */
+}
+
+/* Tracking Sidebar (for Posted Loads List) */
+.tracking-sidebar {
+  width: 350px; /* Wider sidebar for load details */
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; /* Enable scrolling for the load list */
+  flex-shrink: 0;
+}
+
+.tracking-sidebar h2 {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #0a0c10;
+  margin-top: 0;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.loads-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.load-list-item {
+  background: #f7f7f7;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #eee;
+}
+
+.load-list-item:hover {
+  background: #e9f5ff; /* Light blue on hover */
+  border-color: #0070f3;
+  transform: translateY(-3px);
+}
+
+.load-list-item.active {
+  background: #0070f3;
+  color: #fff;
+  border-color: #0070f3;
+  box-shadow: 0 4px 15px rgba(0, 112, 243, 0.2);
+}
+
+.load-list-item.active h3, .load-list-item.active p, .load-list-item.active i {
+  color: #fff; /* Ensure text and icons are white in active state */
+}
+
+.load-list-item h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: #222;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.load-list-item i {
+  color: #888;
+  font-size: 0.9em;
+  transition: color 0.3s ease;
+}
+
+.load-list-item p {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 5px 0;
+}
+
+/* Main Content Area (Map and Details) */
+.tracking-main-content {
+  flex-grow: 1; /* Take up remaining width */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto; /* Allow scrolling for main content if needed */
+}
+
+.tracking-map-area {
+  flex-grow: 1; /* Map takes most of the space */
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  overflow: hidden;
+  min-height: 400px; /* Ensure map is visible */
+  display: flex; /* For centering Leaflet map */
+  justify-content: center;
+  align-items: center;
+}
+
+#tracking-map {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px; /* Apply border-radius to the map itself */
+}
+
+.load-details-display {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  padding: 30px;
+  flex-shrink: 0; /* Prevent details from shrinking too much */
+}
+
+.load-details-display h2 {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #0a0c10;
+  margin-top: 0;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 15px;
+}
+
+.load-details-display p {
+  font-size: 1.05rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.load-details-display strong {
+  color: #222;
+}
+
+.status-in-transit {
+  font-weight: 700;
+  color: #f7b500; /* Amber for in-transit */
+}
+
+.btn-call-shipper,
+.btn-view-proof {
+  background: #0070f3;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s;
+  margin-top: 20px;
+  margin-right: 15px;
+}
+
+.btn-call-shipper:hover,
+.btn-view-proof:hover {
+  background: #005bb5;
+  transform: translateY(-2px);
+}
+
+.btn-view-proof {
+  background: #1a7f37; /* Green for proof */
+}
+
+.btn-view-proof:hover {
+  background: #15652e;
+}
+
+/* Leaflet custom marker for trucks */
+.truck-marker {
+  font-size: 20px;
+  color: #0070f3; /* Blue truck icon */
+  text-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+.main-footer {
+    background: #000;
+    color: #fff;
+    padding: 32px 0 0 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 1rem;
+    width: 100vw;
+  }
+  
+  .footer-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+  }
+  
+  .footer-top {
+    padding-bottom: 18px;
+    border-bottom: 1px solid #222;
+    gap: 30px;
+  }
+  
+  .footer-logo-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    min-width: 180px;
+  }
+  
+  .footer-logo-img {
+    height: 33px;
+    margin-bottom: 2px;
+  }
+  
+  .footer-logo-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .footer-brand {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #f91c54;
+    letter-spacing: 1px;
+  }
+  
+  .footer-tagline {
+    font-size: 0.6rem;
+    color: #ffffff;
+    opacity: 0.85;
+    margin-top: -2px;
+  }
+  
+  .footer-nav {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .footer-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    opacity: 0.92;
+    transition: opacity 0.2s;
+    font-size: 0.8rem;
+  }
+  
+  .footer-nav a:hover {
+    opacity: 1;
+    text-decoration: underline;
+  }
+  
+  .footer-app img {
+    height: 33px;
+    border-radius: 8px;
+    background: #fff;
+    display: block;
+    max-width: 100%;
+  }
+  
+  .footer-bottom {
+    padding: 18px 0 0 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2px;
+    font-size: 0.98rem;
+    width: 90vw;
+    margin: 0 auto;
+    color: #8e8e8e;
+  }
+  
+  .footer-social {
+    display: flex;
+    gap: 18px;
+  }
+  
+  .footer-social a {
+    color: #fff;
+    font-size: 1.3rem;
+    transition: color 0.2s;
+  }
+  
+  .footer-social a:hover {
+    color: #f91c54;
+  }
+  
+  .footer-links {
+    opacity: 0.85;
+    color:#8e8e8e;
+  }
+  
+  .footer-links a {
+    color: #8e8e8e;
+    text-decoration: underline;
+    margin: 0 4px;
+  }
+  
+  @media (max-width: 900px) {
+    .footer-top, .footer-bottom {
+      flex-direction: column;
+      gap: 16px;
+      width: 98vw;
+    }
+    .footer-nav {
+      gap: 14px;
+      font-size: 1rem;
+    }
+    .footer-app img {
+      height: 38px;
+    }
+  }
+  
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .tracking-dashboard-container {
+    flex-direction: column;
+  }
+  .tracking-sidebar {
+    width: 100%;
+    max-height: 300px; /* Limit height for vertical scroll */
+  }
+}
+
+@media (max-width: 900px) {
+  .main-navbar {
+    flex-direction: column;
+    padding: 10px 20px;
+  }
+  .navbar-links {
+    margin-top: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .tracking-dashboard-container {
+    padding: 15px;
+    gap: 15px;
+  }
+  .tracking-sidebar,
+  .load-details-display,
+  .tracking-map-area {
+    padding: 20px;
+  }
+  .tracking-sidebar h2,
+  .load-details-display h2 {
+    font-size: 1.5rem;
+  }
+  .main-footer {
+    padding: 30px;
+  }
+  .footer-row {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-nav,
+  .footer-social,
+  .footer-app {
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-navbar {
+    padding: 10px;
+  }
+  .navbar-logo img {
+    height: 28px;
+  }
+  .navbar-links li a {
+    font-size: 0.95rem;
+    gap: 15px;
+  }
+  .tracking-sidebar h2,
+  .load-details-display h2 {
+    font-size: 1.3rem;
+  }
+  .load-list-item h3 {
+    font-size: 1rem;
+  }
+  .load-list-item p,
+  .load-details-display p {
+    font-size: 0.9rem;
+  }
+  .btn-call-shipper,
+  .btn-view-proof {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  .main-footer {
+    padding: 20px;
+  }
+  .footer-logo-img {
+    height: 35px;
+  }
+  .footer-brand {
+    font-size: 1.3rem;
+  }
+  .footer-tagline {
+    font-size: 0.7rem;
+  }
+} 

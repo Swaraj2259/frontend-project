@@ -1,0 +1,427 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat', Arial, sans-serif;
+  color: #fff;
+  background: #0a0c10;
+  overflow-x: hidden;
+}
+
+.main-navbar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 60px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0) 100%);
+}
+
+.navbar-logo img {
+  height: 36px;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 36px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  opacity: 0.85;
+  transition: opacity 0.2s, font-weight 0.2s;
+}
+
+.navbar-links li a:hover,
+.navbar-links li a.active {
+  font-weight: 700;
+  opacity: 1;
+  border-bottom: 2px solid #f91c54; /* Highlight color */
+}
+
+/* GPS Hero Section */
+.gps-hero {
+  position: relative;
+  width: 100vw;
+  height: 80vh; /* Make it a bit shorter than full viewport height */
+  min-height: 500px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.gps-bg-video {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.gps-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.55); /* Slightly darker overlay */
+  z-index: 2;
+}
+
+.gps-hero-content {
+  position: relative;
+  z-index: 3;
+  padding: 0 20px;
+  max-width: 900px;
+}
+
+.gps-hero-content h1 {
+  font-size: 3.8rem;
+  font-weight: 900;
+  margin: 0 0 16px 0;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+.gps-hero-content h1 .highlight {
+  color: #00c3ff; /* Blue highlight */
+}
+
+.gps-hero-content p {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  margin-bottom: 32px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: #f91c54; /* Pink button */
+  color: #fff;
+  border: 2px solid #f91c54;
+}
+
+.btn-primary:hover {
+  background: #d61445;
+  border-color: #d61445;
+}
+
+.btn-secondary {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  border: 2px solid #fff;
+  backdrop-filter: blur(5px);
+}
+
+.btn-secondary:hover {
+  background: #fff;
+  color: #f91c54;
+}
+
+/* Features Section */
+.gps-features-section {
+  background: #fff;
+  color: #222;
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.gps-features-section h2 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 60px;
+  color: #0a0c10;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-item {
+  background: #f7f7f7;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.feature-icon {
+  background: linear-gradient(45deg, #00c3ff, #f91c54);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: #00c3ff; /* Fallback for unsupported browsers */
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+}
+
+.feature-item h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 10px 0;
+}
+
+.feature-item p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Benefits Section */
+.gps-benefits-section {
+  background: linear-gradient(135deg, #1a1d23 0%, #0a0c10 100%);
+  color: #fff;
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.gps-benefits-section h2 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 60px;
+  color: #fff;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.benefit-item {
+  background: rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 30px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.benefit-item h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  color: #00c3ff;
+}
+
+.benefit-item p {
+  font-size: 1rem;
+  color: #eee;
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.gps-cta-section {
+  background: #fff;
+  color: #222;
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.gps-cta-section h2 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+  color: #0a0c10;
+}
+
+.gps-cta-section p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* Footer styles (reused from main-footer) */
+.main-footer {
+  background: linear-gradient(90deg, #0a0c10 60%, #1a1d23 100%, #0070f3 180%);
+  color: #fff;
+  padding: 40px 60px;
+  box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.footer-row.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 20px;
+  margin-bottom: 0;
+  justify-content: center;
+}
+
+.footer-row.footer-bottom p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.footer-logo-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-logo-img {
+  height: 40px; /* Adjust as needed */
+}
+
+.footer-logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-brand {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.footer-tagline {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-top: -5px;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 30px;
+}
+
+.footer-nav a {
+  color: #eee;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.footer-nav a:hover {
+  color: #00c3ff;
+}
+
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social a {
+  color: #eee;
+  font-size: 1.3rem;
+  transition: color 0.2s;
+}
+
+.footer-social a:hover {
+  color: #f91c54;
+}
+
+.footer-app img {
+  height: 48px; /* Adjust as needed */
+  transition: transform 0.2s;
+}
+
+.footer-app img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .main-navbar {
+    padding: 18px 20px;
+  }
+  .navbar-links {
+    gap: 20px;
+  }
+  .gps-hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .gps-hero-content p {
+    font-size: 1.1rem;
+  }
+  .features-grid, .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  .gps-features-section,
+  .gps-benefits-section,
+  .gps-cta-section {
+    padding: 60px 20px;
+  }
+  .gps-features-section h2,
+  .gps-benefits-section h2,
+  .gps-cta-section h2 {
+    font-size: 2rem;
+  }
+  .footer-row {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  .footer-nav,
+  .footer-social {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-navbar {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 10px;
+  }
+  .navbar-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .gps-hero-content h1 {
+    font-size: 2rem;
+  }
+  .gps-hero-content p {
+    font-size: 1rem;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .btn-primary, .btn-secondary {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .feature-item,
+  .benefit-item {
+    padding: 20px;
+  }
+} 

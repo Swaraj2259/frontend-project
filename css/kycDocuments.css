@@ -1,0 +1,359 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: #f5f7fa;
+  color: #333;
+}
+
+/* Navbar Styles */
+.navbar {
+  background: #fff;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #0099ff;
+}
+
+.logo img {
+  height: 30px;
+}
+
+/* Main Container Styles */
+.kyc-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.kyc-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.kyc-header h1 {
+  font-size: 2.5rem;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* Documents Grid */
+.documents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+/* Document Card Styles */
+.document-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.document-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.document-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.document-header i {
+  font-size: 24px;
+  color: #0099ff;
+}
+
+.document-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #222;
+}
+
+/* Status Badge Styles */
+.status-badge {
+  margin-left: auto;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.status-badge.valid {
+  background: #e6f7ed;
+  color: #00a854;
+}
+
+.status-badge.warning {
+  background: #fff7e6;
+  color: #fa8c16;
+}
+
+.status-badge.expired {
+  background: #fff1f0;
+  color: #f5222d;
+}
+
+/* Document Details */
+.document-details {
+  color: #666;
+}
+
+.expiry-date {
+  font-weight: 600;
+  color: #333;
+}
+
+.document-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Button Styles */
+.btn-view, .btn-upload {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-view {
+  background: #f0f2f5;
+  color: #333;
+}
+
+.btn-upload {
+  background: #0099ff;
+  color: #fff;
+}
+
+.btn-view:hover {
+  background: #e4e6e9;
+}
+
+.btn-upload:hover {
+  background: #007acc;
+}
+
+.btn-upload.urgent {
+  background: #ff3366;
+}
+
+.btn-upload.urgent:hover {
+  background: #e62e5c;
+}
+
+/* Add New Document Card */
+.document-card.add-new {
+  border: 2px dashed #ddd;
+  background: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.document-card.add-new:hover {
+  border-color: #0099ff;
+  background: #f0f7ff;
+}
+
+.add-new-content {
+  text-align: center;
+  color: #666;
+}
+
+.add-new-content i {
+  font-size: 32px;
+  color: #0099ff;
+  margin-bottom: 10px;
+}
+
+.add-new-content h3 {
+  margin: 10px 0 5px;
+  color: #333;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.modal-header {
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #222;
+}
+
+.close-modal {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #666;
+  cursor: pointer;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #444;
+  font-weight: 500;
+}
+
+.form-group select,
+.form-group input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.file-upload {
+  position: relative;
+}
+
+.file-upload input[type="file"] {
+  display: none;
+}
+
+.file-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: #f0f2f5;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.file-label:hover {
+  background: #e4e6e9;
+}
+
+.file-label i {
+  color: #0099ff;
+  font-size: 20px;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 12px;
+  background: #0099ff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-submit:hover {
+  background: #007acc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .documents-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .kyc-header h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .document-actions {
+    flex-direction: column;
+  }
+
+  .btn-view, .btn-upload {
+    width: 100%;
+  }
+
+  .modal-content {
+    width: 95%;
+    margin: 20px;
+  }
+} 

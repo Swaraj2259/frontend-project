@@ -1,0 +1,257 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: #fff;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+
+  background: #fff;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo img {
+  height: 30px;
+}
+
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.help {
+  font-size: 13px;
+  color: #222;
+  font-weight: 500;
+}
+
+.phone-icon {
+  color: #ff3366;
+  margin-right: 4px;
+}
+
+.signup-btn {
+  background: #0099ff;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  padding: 10px 22px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.signup-btn:hover {
+  background: #007acc;
+}
+
+.background {
+  position: relative;
+  min-height: 100vh;
+  background: url('../images/WhatsApp Image 2025-06-07 at 17.05.09.jpeg') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.login-container {
+  position: relative;
+  z-index: 2;
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+}
+
+.login-box {
+  background: rgba(255,255,255,0.95);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  padding: 40px 36px 32px 36px;
+  max-width: 370px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.login-logo img {
+  height: 30px;
+}
+
+
+
+h2 {
+  margin: 10px 0 20px 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 2px;
+  margin-top: 8px;
+}
+
+input[type="email"], input[type="password"], input[type="text"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid #ddd;
+  border-radius: 7px;
+  font-size: 14px;
+  margin-bottom: 2px;
+  background: #f7f7f7;
+  transition: border 0.2s;
+}
+
+input[type="email"]:focus, input[type="password"]:focus {
+  border: 1.5px solid #0099ff;
+  outline: none;
+}
+
+
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 1px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #888;
+  font-size: 18px;
+}
+
+.login-btn {
+  width: 100%;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  padding: 12px 0;
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.login-btn:hover {
+  background: #222;
+}
+
+.divider {
+  width: 100%;
+  text-align: center;
+  margin: 18px 0 10px 0;
+  color: #888;
+  font-size: 15px;
+  position: relative;
+}
+
+.divider:before, .divider:after {
+  content: "";
+  display: inline-block;
+  width: 30%;
+  height: 1px;
+  background: #ddd;
+  vertical-align: middle;
+  
+}
+
+.social-login {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 6px;
+}
+
+.social-btn {
+  width: 50px;
+  height: 44px;
+  border: none;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.social-btn.fb { color: #4267B2; }
+.social-btn.google { color: #EA4335; }
+.social-btn.apple { color: #111; }
+
+.social-btn:hover {
+  background: #f0f0f0;
+}
+
+.footer-text {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 30px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  padding-bottom: 30px;
+}
+
+@media (max-width: 400px) {
+  .login-box {
+    padding: 24px 10px;
+    max-width: 95vw;
+  }
+  header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 10px;
+  }
+  .footer-text {
+    font-size: 15px;
+    padding-bottom: 15px;
+  }
+}
+

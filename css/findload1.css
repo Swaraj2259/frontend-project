@@ -1,0 +1,271 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: #fff;
+  color: #222;
+}
+
+.route-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 24px 32px 0 32px;
+}
+
+.back-arrow {
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.route-title {
+  flex: 1;
+}
+
+.swap-icon {
+  font-size: 1.3rem;
+  color: #ff3366;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.truck-type-bar {
+  display: flex;
+  gap: 12px;
+  padding: 18px 16px 18px 32px;
+  background: #f7f7f7;
+  overflow-x: auto;
+}
+
+.truck-type-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 8px 16px;
+  text-align: center;
+  font-size: 1rem;
+  min-width: 90px;
+  box-shadow: 0 2px 8px #0001;
+  font-weight: 600;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.truck-type-item img {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 2px;
+}
+
+.truck-type-item span {
+  font-size: 0.92rem;
+  color: #888;
+  font-weight: 400;
+}
+
+.truck-type-item.open {
+  background-image: url('open-truck.svg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 36px 36px;
+  padding-top: 40px; /* space for icon */
+}
+
+.load-list-section {
+  background: #f3f3f3;
+  padding: 24px 0;
+}
+
+.load-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: #fff;
+  border: 1.5px solid #ccc;
+  border-radius: 12px;
+  margin: 18px 32px;
+  padding: 18px 24px;
+  box-shadow: 0 2px 12px #0001;
+  gap: 24px;
+  transition: box-shadow 0.2s, border 0.2s;
+}
+
+.load-card:hover {
+  box-shadow: 0 4px 24px #ff336633;
+  border: 1.5px solid #ff3366;
+}
+
+.load-card-left {
+  flex: 2;
+  min-width: 0;
+}
+
+.location-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 10px;
+}
+
+.loc-from, .loc-to {
+  display: flex;
+  align-items: center;
+  font-size: 1.08rem;
+  font-weight: 600;
+  gap: 8px;
+}
+
+.loc-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 4px;
+}
+
+.loc-dot.from {
+  background: #00c3ff;
+  border: 2px solid #00c3ff;
+}
+
+.loc-dot.to {
+  background: #ff3366;
+  border: 2px solid #ff3366;
+}
+
+.loc-dash {
+  width: 2px;
+  height: 16px;
+  border-left: 2px dashed #bbb;
+  margin: 0 0 0 6px;
+}
+
+.truck-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1rem;
+  margin-bottom: 4px;
+  color: #444;
+}
+
+.truck-icon img {
+  width: 28px;
+  height: 28px;
+}
+
+.truck-type {
+  font-weight: 600;
+  max-width: 160px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.truck-weight, .truck-tyres {
+  font-size: 0.98rem;
+  color: #222;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.load-card-right {
+  flex: 1.1;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.product-type {
+  font-size: 1.05rem;
+  color: #888;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.product-type span {
+  color: #222;
+  font-weight: 700;
+}
+
+.payment-terms {
+  width: 100%;
+}
+
+.payment-terms > div:first-child {
+  font-size: 1.05rem;
+  color: #888;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.payment-terms span {
+  color: #ff3366;
+  font-weight: 700;
+}
+
+.payment-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.payment-guaranteed {
+  background: #e6fff6;
+  color: #00c3ff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 4px 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.call-btn {
+  background: #ff3366;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.2s;
+}
+
+.call-btn:hover {
+  background: #d9004c;
+}
+
+.arrow-btn {
+  color: #ff3366;
+  font-size: 1.6em;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .load-card {
+    flex-direction: column;
+    margin: 18px 6px;
+    padding: 12px 8px;
+    gap: 12px;
+  }
+  .load-card-right {
+    align-items: flex-start;
+    min-width: 0;
+  }
+  .truck-type {
+    max-width: 90vw;
+  }
+}
