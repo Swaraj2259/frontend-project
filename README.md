@@ -26,7 +26,7 @@ frontend-project/
 
 ## 🌐 Live Demo
 
-[View Live Site](https://6853bde12182a3201e735a21--websiteblackbuckclone.netlify.app/) 
+[View Live Site](https:https://websiteblackbuckclone.netlify.app/)
 
 ## 🛠️ Setup Instructions
 
